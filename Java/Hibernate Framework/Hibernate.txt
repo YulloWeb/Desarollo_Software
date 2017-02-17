@@ -1,0 +1,143 @@
+/*** ¿Qué es Hibernate? ***/
+
+-- Hibernate es un framework que simplifica el acceso a Base de Datos 
+-- Hibernate representa los datos como objetos simples en Java o tambien llamado POJO 
+-- Un administrador de sesiones es usado para acceder a los objetos 
+-- Hibernate es un Object Relational Mapping tool (ORM)
+-- La productividad aumenta cuando los datos persistentes son necesarios 
+-- Hibernate prepara más fácil el acceso a la bases de datos 
+-- Hibernate es de código abierto debajo de la licencia GNU 
+-- El acceso a la base de datos es hecho por el mapeo y la configuración
+-- Hibernate oculta los detalles del esquema de la base de datos
+-- Provee más tiempo en la concentración en la lógina de negocio 
+-- Hibernate incluye query y recuperación de operaciones 
+-- Los resultados de las consultas son instancias de objetos 
+-- La persistencia es archivada por el mapeo de objetos a tablas de la base de datos
+-- Hibernate puede ser usado en cualquier aplicación Java 
+
+/*** Hibarnate Framework ***/
+
+1.- Aplicación Java 
+2.- Hibarnate 
+	- Configuración 
+	- Session Factory
+	- Sesiones 
+	- Transacciones 
+	- Query
+	- Criteria
+3.- Base de datos (DBMS)
+	- JDBC
+	- JTA 
+	- JNDI
+
+/*** ¿Cómo crear un proyecto de Hibernate? ***
+
+- El nombre de la tabla de la base de datos, es el mismo nombre de la clase en Java
+- El nombre de las columnas de la tabla de la base de datos, son los mismo nombres para los campos de la clase en Java
+- La clase debe contener un constructor declarado 
+- Los campos deben tener getters y setters 
+
+/*** Archivo de configuración **/
+
+- El archivo de configuración es solicitado por Hibernate 
+- EL archivo es usado para definir solicitudes a la base de datos 
+- El archivo de configuración es llamado 'hibernate.cfg.xml'
+
+/*** Ejemplo de un archivo de configuración ***/ 
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+	  <session-factory>
+	    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/MessageRepository?zeroDateTimeBehavior=convertToNull</property>
+	    <property name="hibernate.connection.username">root</property>
+	    <property name="hibernate.connection.password">JIsidro0203</property>
+	    <property name="hibernate.show_sql">true</property>
+	    <property name="hibernate.current_session_context_class">thread</property>
+	    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+	  </session-factory>
+	</hibernate-configuration>
+
+/*** ¿Qué es la ingenieria inversa? ***/
+- Hibernate usa una colección de reglas para el mapping 
+- Este archivo puede especificar los tipos de datos del mapping y el filtrado de tablas
+- La etiqueta <schema-selection> es usado para identificar la base de datos, se puede obtener
+mas de una base de datos
+- La etiqueta <table-filter> identifica las tablas de la base de datos 
+- La etiqueta <type-mapping> es usado para convertir los tipos de datos
+- La etiqueta <table> define explicitamente las tablas que estaran en la ingenieria inversa 
+
+/*** ¿Qué es la persistencia de datos? ***/
+- Hibernate trabaja con el modelo de objetos que existe en Java
+- Los objetos requeridos son marcados como persistentes 
+- Solo los objetos con instancia de variable pueden ser almacenados 
+- Existe 3 estados de persistencia 
+	1.- Transient state
+		- Ocurre cuando los objetos existen en memoria 
+		- La base de datos no tiene conocimiento del objeto 
+		- Para persistit este objeto, debemos pedirle a la session que lo guarde en la base de datos
+		- Hibernate asigna un identificador al objeto almacenado 
+	2.- Persistent State
+		- Una vez que es guardado el objeto, comienza el 'persitent state'
+		- Los objetos persistentes son los que existen en la base de datos 
+		- Los cambios hechos en los objetos son reflejados en la actual transacción 
+		- Los cambios hechos en los objetos son reflejados en la base de datos
+	3.- Detached State
+		- Estos objetos existen en la base de datos pero la conexión se ha perdido 
+		- Un objeto persistente cuya sesión ha sido cerrada es un ejemplo de 'detached state'
+		- Esto puede ser reconectado por una sesion de Hibernate cuando sea necesario 
+
+/*** ¿Qué es una sesión? ***/
+- Las librerias básicas de Hibernate son usadas para las conexiones con la base de datos 
+- Solo abrir una conexión cuando es necesario 
+- Cada aplicación deberia tener una sola instancia de SessionFactory 
+- Un objeto configurado es usado para crear un objeto SessionFactory 
+- El objeto SessionFactory es un hilo seguro
+- Crear el objeto SessionFactory y ponerlo puesta en marcha 
+- Cada SessionFactory pernetece a una base de datos
+
+	/*** Objeto de sesión ***/
+	- Crear solo un objeto de sesión cuando sea necesario
+	- Destruir el objeto cuando sea ha completado una tarea 
+	- Los objetos de sesión envuelven los recursos del JDBC
+	- Incluyen metodos como: save, persist, get, create, read, openSession, etc.
+
+	/*** Objetos de Transacción ***/
+	- Una transacción es una unidad de trabajo 
+	- Envolviendo el trabajo en una transacción, restringe el acceso desde otros usuarios
+	- La transaccion puede se iniciada, cometida(commit) o revertida(rollback)
+	- Son manejadas por un gestor de transacciones 
+
+/*** Estrategias de mapping ***/ 
+- Las entidates/clases son referidas a las tablas dentro de la base de datos
+- Una instancia de una clase se refiere a un renglón dentro de una tabla de la base de datos
+- Los atributos/propiedades de una clase se refiere a las columnas dentro de una tabla de la base de datos
+- Las clases deberian seguir el modelo de programación POJO o JavaBean (metodos setters y getters, un construtor vacio)
+- Hibernate usa el archivo de configuración para el mapping de los datos
+- Las relaciones (base de datos) son incluidas en el archivo del mapping
+- La estrategia del mapping actua como un traductor para Java y JDBC
+- Leer e insertar en la base de datos, es hecho por Hibernate 
+- Hay dos formas para indetificar el archivo mapping en Hibernate
+	1.- Anterior a Java 5, el archvio xml fue usado exclusivamente
+	2.- Las anotaciones fueron introducidas en Java 5
+- Hay herramientas que pueden ser usadas para auto-generar el archivo xml
+- El archivo es guardado como: 'nombre de la clase'.hbm.xml
+- El elemento root es <hibernate-mapping>
+- Todos las etiquetas <class> son incluidos en el elmento root
+- El nombre de la clase y el nombre de la base de datos son incluidos
+- La etiqueta <meta> es opcional y puede ser usado para describir la clase
+- La etiqueta <id> mapea el atributo ID y este es unico 
+- La etiqueta <generator> es usado para auto-generar primary keys
+- La etiqueta <property> es usada para mapear una propiedad de la clase a una columna de la tabla de la base de datos
+
+/*** Hibernate Query Language or HQL ***/
+- Hibernate entiende el SQL nativo
+- HQL es una alternativa para SQL
+- HQL es como la version orientada a objetos de SQL
+- HQL agrega una capa de abstracción para el programador
+- El programa no necesita cambiar si las estructura subyacente cambia de la base de datos 
+- HQL trabajo con objetos persistentes y sus propiedades 
+- Las queries son traducidas dentro de la queries convencionales de SQL
+- Usando HQL ayuda a evitar la portabilidad de problemas
