@@ -1,0 +1,384 @@
+/*** Historia de C# ***/
+- C# fue introducido en el 2002 por Microsoft 
+- Pertenece al framework .NET 
+- C# es un lenguaje al estilo C 
+- C# es directamente derivado de Java 
+
+/*** Caracteristicas de C# ***/
+- C# es un lenguaje fuertemente tipado 
+- C# es un lenguaje orientada a objetos 
++ C# está diseñado para soportar multiples estilos de progrmación
+  - Imperativo
+  - Declarativo
+  - Funcional
+  - Programación generica 
+
+/*** C# y el framework .NET ***/
+- El framework .NET fue introducido en el 2002
+- Soporta C#, Visual Basic .NET, JScript .NET y otros
+
+/*** Windows Runtime ***/
+- WinRT fue introducido con Windows 8
+- Soporta C#, Visual Basic .NET, C++, JavaScript 
+- Soporta arquitecturas x86 y ARM
+- Windows Phone actualmente usa Windows Phone Runtime 
+
+/*** Versiones de C# ***/
+
+**************************************************************************
+| Version| Año | Caracteristicas claves                                  |
+**************************************************************************
+|  1.0   |2002 | Primera version                                         |
+**************************************************************************
+|  2.0   |2006 | Declaraciones genericas, metodos anonimos, iteradores,  |
+|        |     | clases estaticas, tipos nulos				 |
+**************************************************************************
+|  3.0   |2007 | Declaracion implicita, auto-implementacion de 		 |
+|        |     | propiedades , tipos anonimos, expresiones lambda 	 | 
+**************************************************************************
+|  4.0   |2010 | Union dinamica, nombre y opciones args			 |
+**************************************************************************
+|  5.0   |2013 | Asincrono y espera, llamador de informacion		 |
+** ***********************************************************************
+- C# vNext o C# 6.0
+
+/*** Ambiente de Código Gestionado ***/
+- C# no compila a código maquina, es compilado a bytecode
++ El bytecode es ejecutado por el Common Language Runtime(CLR)
+  - CLR es una maquina virtual
+  - CLR provee seguridad, gestión de memoria y mucho más 
+
+/*** El stack .NET ***/
+********************************************
+|     C# | C++ | VB | JScript | F#	   | 		
+********************************************
+|   ASP.NET | WPF | WinForms | Others 	   | 
+********************************************
+| Application Class Libraries and Services |
+********************************************
+|           Base Class Library		   |
+********************************************
+|        Common Language Runtime	   |
+********************************************
+| 	    Operating System 		   |
+********************************************
+
+/*** Apliccaciones para Windows 8 ***/
+- Windows Runtime (WinRT) es usado en lugar de .NET
+- WinRT es expuesto a las APIs .NET
+- C# es aun el lenguaje dominante 
+
+/*** Lenguaje nativo vs Lenguaje gestionado ***/
+- El lenguaje nativo es compilado a código maquina
+- El lenguaje nativo requiere distintos compiladores para cada sistema operativo
++ Lenguajes de programación nativos 
+  - C
+  - C++
+  - Objective-C
+  - Pascal y muchos más
+- El lenguaje gestionado es compilado por un formato intermedio 
+- El lenguaje gestionado tipicamente es compatible con los sistemas operativos
+
+/*** C# es un lenguaje gestionado ***/ 
+- C# es compilado a bytecode, no a lenguaje maquina
+- EL Common Language Runtime(CLR) ejecuta el bytecode
+
+/*** Asignación de memoria ***/
+- La memoria es asignada dinamicamente por el Runtime
+- Usualmente no se tiene que asignar memoria explicitamente 
+- El CLR periodicamente checa la pila de la memoria
+- Buscar objetos no referenciados libera recursos de la memoria
+- El proceso es conocido como recolección de basura 
+
+/*** Toda la vida de un objeto ***/
+- Object obj ; --> Variable declarada | No esta usado en memoria
+- obj = new Object(); --> Objeto instanciado | Ahora esta en memoria
+			  Esta referecniado a una variable | 
+			  No es elegible por el recolector de basura 
+- obj = null; --> Objeto no referenciado | No es imediatamente destruido de la memria
+		  Es elegible por el recolector de basura 
+- Cuando una variable no es referenciada por un objeto, esto es elegible para el
+  recolector de basura 
+
+/*** Gestión de memoria en WinRT ***/
+- Windows Runtime es un ambiente nativo 
+- EL framework .NET está integrado como una sub-plataforma
+- Los objetos en Windows Runtime son gestionados por conteo de referencia
+- Los objetos .NET son a un sujetos por el recolector de basura 
+- Los desarrolladores C# aun no gestionan la memoria directamente 
+		
+/*** Ambiente de desarrollo ***/
+- Instalar Visual Studio Community free
+
+/*** La naturaleza de C# ***/
+- C# es un lenguaje orientado a objetos
+- No soporta variables o funciones globales
+- Los objetos son definidos en clases o estructuras
+- Las persistencia de datos está almacenada en campos, miembros de una 
+  clase o estructura
+- Los comportamientos son definidos como metodos, miembros de una clase o estructura 
+
+/*** Definición de una clase ***/
+
+namespace HelloWorld --> Las clases y estrucutras son miembros del namespace | organización del código
+{
+   class Program --> Todo el código es colocado dentro de una clase o estructura
+   {
+      public String value;--> Propiedades o atributos, miembros de una clase o estructura
+      static void Main(string[] args) --> Metodos o funciones, miembros de una clase o estructura
+      {
+         Console.WriteLine("¡Hello, World!");
+	 Console.ReadLine();
+      } 
+   }
+}
+ 
+/*** La Base Class Library ***/
++ Define las clases para todos los frameworks 
+  - Gestión de archivos
+  - Operaciones matematicas
+  - Otras operaciones comunes 
++ Ejemplo: Operaciones matematicas
+  - Las tareas comunes son en System.Math
+  - Mas operaciones son metodos estaticos
+  - Los valores comunes son almacenados en campos 
+  - Agregar la libreria  
+           using System.Math;
+  - Usar la liberia
+           double pi = Math.PI; --> Un campo
+   	   double rounded = Math.Round(pi,2); --> Un metodo
+	   Console.WriteLine(rounded); --> 3.14	
+
+/*** Diagramando clases en C# ***/
+- Unified Model Language (UML)
+***************
+| System.Math | --> Nombre de la Clase
+***************
+|      E      | --> Campos de la Clase  
+|     PI      | 
+***************
+|    Abs()    |  
+|    Acos()   |
+|    Asin()   | --> Metodos de la Clase
+|    Atan()   |
+|   BigMul()  |
+***************
+
+/*** ¿Quién decide? ***/
+- Algunas reglas son forsozas por el compilador
+- Las directrices no forzadas son sugeridas por Microsoft
+- Algo de controversia / desacuerdo es inevitable
+- Solo los desarrolladores llegan a decidir por ellos mismos
+- En equipos deberias aceptar las directices de sus projectos
+
+/*** Reglas forzosas por el compilador ***/
+- Los nombres de los identificadores pueden incluir caracteres alphanumericos
+- No pueden incluir caracteres especiales despues del guión bajo
+- Pueden empezar con un alpha o guión bajo, no un numero 
+
+/*** Case Sensitivity ***/
++ Un identificador es un elemento nombrado en programación
+  - Variables
+  - Metodos
+  - Propiedades y mucho más
++ Los identificadores en C# son case sensitive; estos son diferentes
+  - firstName
+  - FirstName
+  - FIRSTNAME
+
+/*** Recomendaciones generales por Microsoft ***/
+- Elegir nombres de identificadores legibles
+- Ayudar a la legebilidad en breve
+- No guiones bajos, guiones y caracteres especiales
+- No usar la notación 'Hungarian': strFirstName, iAge, etc., esta notación 
+  muestra excepciones por los nombre de los objetos visuales en XAML
+
+/*** Variables, Campos, Parametros ***/	
+- Empezar con un caracter en minuscula
+- Usar camel-case para distinguir palabras
+  
+  int i = 0;
+  double thePrice = 14.95;
+
+/*** Todos: Pascal Casing ***/
+- Empezar con un caracter en mayuscula, el resto con camel-case
+  cosnt int HomeRunRecord = 61;
++ Usa para todos los identificadores 
+  - Metodos
+  - Constantes
+  - Propiedades
+
+/*** ¿Qué son los tipos de datos? ***/
+- Un tipo define la información que contendra una variable
+- Las variables en C# son fuertemente tipadas
+- Un tipo implica un valor minimo y maximo 
+- Un vez declarado el tipo a una varibles, este no puede cambiar 
+
+/*** Tipos de datos incorporados en C# ***/
+- Logicos
+- Numericos
+- Cadenas y caracteres
+- Clases y estructuras
+- Objetos 
+
+/*** Clases y estructuras ***/
+- Los tipos de datos son reprentados en .NET como clases o estructuras
+- Ambos tienes propiedades y metodos
+- Se puede crear una instancia de una clase o estructura 
+
+/*** Clases vs Estructuras ***/
+- Las estructuras son tipos de valores
+- Numericos y logicos son estructuras 
+  int v1 = 5;
+  int v2 = v1; --> v2 es una copia de v1 | Si se cambia el valor de v2, esto no afecta v1
+- Las clases son de tipos referenciados
+  Object o1 = new Object();
+  Object o2 = o1; --> o2 es referencia de o1 | Se se cambias las propiedades de o2, esto afecta a o1
+
+/*** Tipos logicos y carcteres ***/
+***********************************************************
+| Tipo en C# | Tipo en .NET | Valor minimo | Valor maximo |
+***********************************************************
+|    bool    |    Boolean   |    false     |     true     |
+***********************************************************
+|    char    |     Char     |    U+0000    |     U+ffff   |
+***********************************************************
+- Todos los tipos de .NET son miembros de System
+  System.Boolean
+  System.Char
+
+/*** Tipos enteros ***/
+***********************************************************
+| Tipo en C# | Tipo en .NET | Valor minimo | Valor maximo |
+***********************************************************
+|   byte     |    Byte      |      0       |     255      |
+***********************************************************	
+|   sbyte    |    SByte     |    -128      |     127      |
+***********************************************************  
+|   short    |    Int16     |   -32,768    |    32,767    |
+***********************************************************
+|   ushort   |    UInt16    |      0       |    65,535    |
+***********************************************************
+|    int     |    Int32     |-2,147,463,648|2,147,483,647 |
+***********************************************************
+|    uint    |    UInt32    |      0       |4,294,967,295 |
+***********************************************************
+|    long    |     Long     | -9.22x10^18  |  9.22x10^18  |
+***********************************************************
+|   ulong    |     ULong    |      0       |  1.84x10^19  |
+***********************************************************
+
+/*** Tipo decimal y punto flotante ***/
+***************************************************************************
+| Tipo en C# | Tipo en .NET | Valor minimo | Valor maximo |   Precision   |
+***************************************************************************   
+|   float    |    Single    |   ±1.5e-45   |    ±3.4e38   |   7 digitos   |
+***************************************************************************
+|   double   |    Double    |   ±5.0e-324  |    ±1.7e308  | 15-16 digitos |
+***************************************************************************
+|   decimal  |    Decimal   |   -7.9x10^28 |    7.9x10^28 | 28-29 digitos |
+***************************************************************************
+
+/*** Cadenas ***/
+*********************************************
+| Tipo en C# | Tipo en .NET |  Valor maximo |
+*********************************************
+|   string   |    String    |2,147,463,647* |
+*********************************************
+- Teoricamente la memoria es importante 
+- System.String es una clase, no una estructura
+
+/*** ¿Qué es un operador? ****/
+- Una construcción sintáctica que ejecuta una acción
+- El lenguaje C comparte un conjunto de operadores
+- C# tiene algunos operadores unicos
+
+/*** Operadores matematicos ***/
+********************************************
+| Operador |    Operación   |    Ejemplo   |
+********************************************
+|    +     |      Suma      | 32 + 32 = 64 |
+********************************************
+|    -     |      Resta     | 64 - 32 = 32 |
+********************************************
+|    *     | Multiplicación |  8 * 4 = 32  |
+********************************************
+|    /     |    Division    |   8 / 4 = 2  |
+********************************************
+|    %     |      Resto     |   9 % 2 = 1  |
+********************************************
+
+/*** Operadores unarios ***/
+********************************************
+| Operador |    Operación   |    Ejemplo   |
+********************************************
+|    ++    |   Incremento   |  intValue++  |
+********************************************
+|    --    |   Decremento   |  intValue--  |
+********************************************
+|    +=    |   	Agregar     |  value += 5  |
+********************************************
+|    -=    |    Quitar      |  value -= 5  |
+********************************************
+
+/*** Valores Booleanos ***/
+- Una expresión booleana puede tener un valor verdadero(true) o falso(false)
+- Una variable booleana es una instancia de Boolean
+- Los booleanos son representados el tipo C# bool
++ El valor por defecto cuando se crea una instancia de Boolean es false
+  - bool defaultValue = new Boolean();
+
+/*** Operadoderes de igualdad ***/
+**********************************
+| Operador | Operación | Ejemplo |
+**********************************
+|   ==     |   Igual   |  x == y |
+**********************************
+|   !=     |  No igual |  x != y |
+**********************************
+|    !     |  Negación |    !x   | --> x debe ser un valor booleano
+**********************************
+
+/*** Operadores condicionales ***/
+**********************************************************
+| Operador |    Operación    |        Ejemplo            |
+**********************************************************
+|   &&     |       AND       |       if(x && y)          |
+**********************************************************
+|   ||     |        OR       |        if(x || y)         |
+**********************************************************
+|   ??     | Null-coalescing |  int new = (x ?? default) |
+**********************************************************
+- ?? = Operador de uso combinado de NULL. 
+       Dicho operador devuelve el operando izquierdo si no es NULL; 
+       de lo contrario, devuelve el operando derecho.
+
+/*** Relacional y prueba de tipo ***/
+***************************************************
+| Operador |     Operación     |     Ejemplo      |
+***************************************************
+|    <     |     Menor que     |    if(x < y)     |
+***************************************************
+|    >     |     Mayor que     |    if(x > y)     |
+***************************************************
+|   <=     | Menor que o igual |    if(x <= y)    | 
+***************************************************
+|   >=     | Mayor que o igual |    if(x >= y)    | 
+***************************************************
+|   is     |  Tipo compatible  |  if(x is String) | 
+***************************************************
+- is = Operador que verifica la compatibilidad con una Clase o Estructura
+
+/*** Comparando un String ***/
+- Los String pueden ser comparados con == o el metodo Equals()
++ Lo siguiente es equivalente: 
+  - if (string1.Equals(string2))
+  - if (string1 == string2)
+
+/*** Comparando no case-sensitive ***/
+- Comparando strings == es case-sensitive
++ Para no case-sensitive:
+  - if (string1.Equals(string2, StringComparison.OrdinalIgnoreCase)) 
+
+
+
