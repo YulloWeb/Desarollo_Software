@@ -1,0 +1,5 @@
+c:\users\isidr\documents\visual studio 2015\Projects\08_StringsToNumbers\08_StringsToNumbers\bin\Debug\08_StringsToNumbers.exe.config
+c:\users\isidr\documents\visual studio 2015\Projects\08_StringsToNumbers\08_StringsToNumbers\bin\Debug\08_StringsToNumbers.exe
+c:\users\isidr\documents\visual studio 2015\Projects\08_StringsToNumbers\08_StringsToNumbers\bin\Debug\08_StringsToNumbers.pdb
+c:\users\isidr\documents\visual studio 2015\Projects\08_StringsToNumbers\08_StringsToNumbers\obj\Debug\08_StringsToNumbers.exe
+c:\users\isidr\documents\visual studio 2015\Projects\08_StringsToNumbers\08_StringsToNumbers\obj\Debug\08_StringsToNumbers.pdb

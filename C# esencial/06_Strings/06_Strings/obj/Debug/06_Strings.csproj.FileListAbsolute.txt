@@ -1,0 +1,5 @@
+c:\users\isidr\documents\visual studio 2015\Projects\06_Strings\06_Strings\bin\Debug\06_Strings.exe.config
+c:\users\isidr\documents\visual studio 2015\Projects\06_Strings\06_Strings\bin\Debug\06_Strings.exe
+c:\users\isidr\documents\visual studio 2015\Projects\06_Strings\06_Strings\bin\Debug\06_Strings.pdb
+c:\users\isidr\documents\visual studio 2015\Projects\06_Strings\06_Strings\obj\Debug\06_Strings.exe
+c:\users\isidr\documents\visual studio 2015\Projects\06_Strings\06_Strings\obj\Debug\06_Strings.pdb

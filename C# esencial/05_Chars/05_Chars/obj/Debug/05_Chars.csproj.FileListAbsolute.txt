@@ -1,0 +1,5 @@
+c:\users\isidr\documents\visual studio 2015\Projects\05_Chars\05_Chars\bin\Debug\05_Chars.exe.config
+c:\users\isidr\documents\visual studio 2015\Projects\05_Chars\05_Chars\bin\Debug\05_Chars.exe
+c:\users\isidr\documents\visual studio 2015\Projects\05_Chars\05_Chars\bin\Debug\05_Chars.pdb
+c:\users\isidr\documents\visual studio 2015\Projects\05_Chars\05_Chars\obj\Debug\05_Chars.exe
+c:\users\isidr\documents\visual studio 2015\Projects\05_Chars\05_Chars\obj\Debug\05_Chars.pdb

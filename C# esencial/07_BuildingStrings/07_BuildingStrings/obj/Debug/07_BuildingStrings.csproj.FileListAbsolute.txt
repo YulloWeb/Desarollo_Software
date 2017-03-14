@@ -1,0 +1,6 @@
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\bin\Debug\07_BuildingStrings.exe.config
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\bin\Debug\07_BuildingStrings.exe
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\bin\Debug\07_BuildingStrings.pdb
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\obj\Debug\07_BuildingStrings.csprojResolveAssemblyReference.cache
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\obj\Debug\07_BuildingStrings.exe
+c:\users\isidr\documents\visual studio 2015\Projects\07_BuildingStrings\07_BuildingStrings\obj\Debug\07_BuildingStrings.pdb

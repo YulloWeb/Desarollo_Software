@@ -1,0 +1,6 @@
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\bin\Debug\09_MathOperators.exe.config
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\obj\Debug\09_MathOperators.csprojResolveAssemblyReference.cache
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\bin\Debug\09_MathOperators.exe
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\bin\Debug\09_MathOperators.pdb
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\obj\Debug\09_MathOperators.exe
+c:\users\isidr\documents\visual studio 2015\Projects\09_MathOperators\09_MathOperators\obj\Debug\09_MathOperators.pdb
